@@ -9,9 +9,10 @@ class Bird(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.image.load('aviao.jpg').convert_alpha() #recortando a imagem
+        self.image = pygame.image.load('asaCentro.png').convert_alpha() #recortando a imagem
         self.rect = self.image.get_rect()
-        print(self.rect)
+        self.rect[0] = SCREEN_WIDTH/2
+        self.rect[1] = SCREEN_HEIGHT/2
     
     def update(self):
         pass
@@ -19,7 +20,7 @@ class Bird(pygame.sprite.Sprite):
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-FUNDO = pygame.image.load('fundo3.png')#plano de fundo
+FUNDO = pygame.image.load('noite.png')#plano de fundo
 FUNDO = pygame.transform.scale(FUNDO,(SCREEN_WIDTH, SCREEN_HEIGHT))#enquadrando a imagem ao tamanho da tela
 
 bird_group =pygame.sprite.Group()
